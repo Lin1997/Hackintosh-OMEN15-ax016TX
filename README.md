@@ -11,7 +11,7 @@ CPU	i5-6300HQ
 核显	HD530
 独显	NVIDIA GeForce GTX 960M	(无法使用，HotPatch中已屏蔽)
 内存	8G DDR4 2133
-BIOS版本	F.38 Rev.A
+BIOS版本	F.44 Rev.A
 
 2.目前完善情况:
 已工作
@@ -51,7 +51,7 @@ http://bbs.pcbeta.com/viewthread-1738261-1-1.html
 开机后连按F10进入BIOS设置，先恢复默认设置。然后将”安全启动”关闭,将”传统模式”打开。
 
 2.制作安装盘
-1.论坛上下载带clover的原版安装镜像(.dmg格式的)，这里提供一个(感谢:…).
+1.论坛上下载带clover的原版安装镜像(.dmg格式的)，这里提供一个(感谢daliansky):http://bbs.pcbeta.com/viewthread-1772197-1-1.html
 2.下载TransMac，打开并插入U盘(自行备份文件)，右键单击U盘 选”Format Disk For Mac”格式化U盘。然后再次右键单击U盘，选中”Restore with Disk Image”，然后选择下载好的安装镜像写入U盘.
 3.打开写入镜像的U盘的EFI分区，删除所有文件，替换成下文给的EFI附件(要解压).
 
@@ -67,12 +67,15 @@ http://bbs.pcbeta.com/viewthread-1738261-1-1.html
 (注:附件的X86PlatformPluginInjector.kext只适用于i5-6300HQ,其它CPU参考教程 http://bbs.pcbeta.com/viewthread-1737021-1-1.html制作并安装)
 (c) 打开终端，输入命令”sudo kextcache -i /“，回车并输入密码。重启。
 2.解决macOS与Win10时间不同步:
-因为Windows和macOS看待CMOS记录时钟的方式不一样，两者会出现时间不同步。一般的解决方法都是修改Windows注册表:定位到HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation\，添加一个名为"RealTimeIsUniversal"的DWORD项，把值设为1
+因为Windows和macOS看待CMOS记录时钟的方式不一样，两者会出现时间不同步。一般的解决方法都是修改Windows注册表:定位到
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation\，
+添加一个名为"RealTimeIsUniversal"的DWORD项，把值设为1
 3.多指手势设置(感谢syscl):
 “双指从右边缘向左滑动”和”三指下滑”快捷键设置方法:
 系统偏好设置-键盘-快捷键 里: 
 (a) Mission Control里双击”显示通知中心”右边的快捷键部分,然后双指从右边缘向左滑动，会自动填入快捷键; 
 (b) Lanunchpad 与 Dock里双击”显示Launchpad”右边的快捷键部分,然后三指下滑，会自动填入快捷键.
+4.有网友反映睡眠唤醒会花屏可以试试这个脚本(感谢triton21)：http://bbs.pcbeta.com/viewthread-1769152-1-1.html
 
 三、其它
 1.常用文件/工具
