@@ -62,10 +62,16 @@ http://bbs.pcbeta.com/viewthread-1738261-1-1.html
 
 4.完善系统
 1.额外kext安装：
-(a) 打开Finder,菜单栏选”前往”->”前往文件夹”，输入/Library/Extensions
-(b) 将附件解压的到的EFI/LE里的AppleBacklightInjector.kext和X86PlatformPluginInjector.kext复制到刚才打开的目录里。
-(注:附件的X86PlatformPluginInjector.kext只适用于i5-6300HQ,其它CPU参考教程 http://bbs.pcbeta.com/viewthread-1737021-1-1.html制作并安装)
-(c) 打开终端，输入命令”sudo kextcache -i /“，回车并输入密码。重启。
+1、打开终端，输入"cd "
+(即cd和空格)
+2、解压附件，把LE文件夹拖进终端,然后回车
+[插图]
+3、输入命令
+sudo cp -R *.kext /Library/Extensions
+回车，输入密码，再回车
+4、输入命令
+sudo kextcache -i /
+回车，重启系统，搞定.
 2.解决macOS与Win10时间不同步:
 因为Windows和macOS看待CMOS记录时钟的方式不一样，两者会出现时间不同步。一般的解决方法都是修改Windows注册表:定位到
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation\，
